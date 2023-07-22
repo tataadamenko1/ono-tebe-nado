@@ -1,3 +1,7 @@
+.wrapper {
+  max-width: 1440px;
+  margin: 0 auto;
+}
 .header {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -5,7 +9,6 @@
   max-width: 1340px;
 }
 .header__menu {
-  display: inline-block;
   vertical-align: middle;
   margin-top: 43px;
   margin-bottom: 45px;
@@ -19,6 +22,9 @@
 }
 .header__links-list-item {
   margin-right: 32px;
+}
+.header__links-list-item:last-child {
+  margin-right: 0px;
 }
 .header__links-list-item_no-bullit {
   list-style-type: none;
@@ -38,6 +44,10 @@
   margin-top: 5px;
   margin-bottom: 7px;
 }
+.header__link {
+  border-bottom: 1px solid black;
+  text-decoration: none;
+}
 
 /*main*/
 
@@ -49,6 +59,7 @@
   max-width: 1440px;
   position: relative;
   margin-bottom: 180px;
+  background-position: center;
 }
 .overlay {
   width: 100%;
@@ -60,27 +71,33 @@
   z-index: 1;
 }
 .cover-title {
-  color: white;
-  font-size: 50px;
-  font-style: normal;
-  font-weight: 700;
-  letter-spacing: 30px;
-  text-transform: uppercase;
   z-index: 2;
   position: relative;
 }
 .aligned-text {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  font-size: 100px;
+  font-style: normal;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.aligned-text-left {
   line-height: 115px;
 }
 .aligned-text-center {
-  text-align: center;
+  align-self: center;
   margin-top: 20px;
   margin-bottom: 20px;
   line-height: 100px;
+  margin-right: 60px;
 }
 .aligned-text-right {
-  text-align: end;
+  align-self: flex-end;
   line-height: 100px;
+}
+.letter-spacing {
   letter-spacing: 30px;
 }
 .letter-spacing-extended {
@@ -94,8 +111,8 @@
   z-index: 2;
   display: flex;
   flex-direction: row;
+  justify-content: end;
   align-items: center;
-  margin-left: 372px;
   margin-top: 138px;
 }
 .cover__description-text {
@@ -141,7 +158,14 @@
 .lots__card-list-item {
   width: 430px;
   min-height: 450px;
+  margin-right: 25px;
 }
+.lots__card-list-item:last-child {
+  flex-grow: 1;
+  margin-bottom: 0;
+  margin-right: 0;
+}
+
 .card-link {
   display: block;
   text-decoration: none;
@@ -200,9 +224,6 @@
   display: grid;
   grid-template-columns: 430px auto;
 }
-.about__column {
-  margin-left: 770px;
-}
 .about__logo {
   margin-left: auto;
   margin-right: auto;
@@ -228,6 +249,9 @@
   font-weight: 400;
   line-height: 24px;
   margin-left: 25px;
+}
+.about__text-after {
+  margin-bottom: 25px;
 }
 
 /*подвал*/
@@ -261,4 +285,11 @@
 .footer__social-list-item {
   height: 48px;
   width: 48px;
+}
+.footer__link {
+  border-bottom: 1px solid black;
+  text-decoration: none;
+}
+.footer__link-active {
+  text-decoration: none;
 }
